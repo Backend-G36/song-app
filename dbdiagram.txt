@@ -1,0 +1,42 @@
+
+Table genres {
+  id serial [pk]
+  name varchar
+}
+
+Table artists {
+  id serial [pk]
+  name varchar
+  country varchar
+  formationYear int
+  image text
+}
+
+Table genreArtist {
+  genreId int [ref : > genres.id]
+  artistId int [ref : > artists.id]
+}
+
+Table albums {
+  id serial [pk]
+  name varchar
+  image text
+  releaseYear int
+  artistId int [ref : > artists.id]
+}
+
+Table songs{
+  id serial [pk]
+  name varchar
+  albumId int [ref: > albums.id]
+}
+
+Table songArtists {
+  artistId int [ref: > artists.id]
+  songId int [ref: > songs.id]
+}
+
+Table songGenre {
+  genreId int [ref: > genres.id]
+  songId int [ref: > songs.id]
+}
