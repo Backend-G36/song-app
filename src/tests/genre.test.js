@@ -20,7 +20,7 @@ test("POST-> 'BASE_URL', should return status code 201, and res.body.name ===gen
   expect(res.statusCode).toBe(201)
   expect(res.body).toBeDefined()
   expect(res.body.name).toBe(genre.name)
-})
+}) //! Hider 
 
 test("GET -> 'BASE_URL' should return status code 200 and res.body[0].name === genre.name", async () => {
   const res = await request(app)
@@ -30,7 +30,7 @@ test("GET -> 'BASE_URL' should return status code 200 and res.body[0].name === g
   expect(res.body).toBeDefined()
   expect(res.body[0].name).toBe(genre.name)
   expect(res.body).toHaveLength(1)
-})
+}) //! Tona 
 
 test("Get -> 'BASE_URL/:id', should return status code 200, return res.body.name === genre.name ", async () => {
 
@@ -41,7 +41,7 @@ test("Get -> 'BASE_URL/:id', should return status code 200, return res.body.name
   expect(res.statusCode).toBe(200)
   expect(res.body).toBeDefined()
   expect(res.body.name).toBe(genre.name)
-})
+}) //! Christopher
 
 test("PUT 'URL_BASE/:id' should return status code 200, and res.body.name === nameUpdate.name", async () => {
 
@@ -56,11 +56,11 @@ test("PUT 'URL_BASE/:id' should return status code 200, and res.body.name === na
   expect(res.status).toBe(200)
   expect(res.body).toBeDefined()
   expect(res.body.name).toBe(nameUpdate.name)
-})
+}) //! Luis
 
 test("DELETE -> 'BASE_URL/:id', should return status code 204", async () => {
   const res = await request(app)
     .delete(`${BASE_URL}/${genreId}`)
 
   expect(res.status).toBe(204)
-})
+}) //! Jesus Carrasquilla
