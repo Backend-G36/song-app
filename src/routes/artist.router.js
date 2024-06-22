@@ -10,7 +10,7 @@ routerArtist.route('/')
 routerArtist.route('/:id/genres')
   .post(setGenres)
 
-routerArtist.route('/:id')
+routerArtist.route('/:id') //! /artists/:id
   .get(getOne)
   .delete(remove)
   .put(update);
